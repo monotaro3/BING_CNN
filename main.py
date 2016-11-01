@@ -214,8 +214,9 @@ def main():
     start = time.time()
     for i in range(len(vehicle_list)):
         for j in range(len(bingwindows)):
-            if bingwindows[j].result == 1 and bingwindows[j].cover(vehicle_list[i]):
-                vehicle_detected[i] = True
+            if bingwindows[j].cover(vehicle_list[i]):
+                if bingwindows[j].result == 1:
+                     vehicle_detected[i] = True
     end = time.time()
     time_analysis = end - start
     print('finished.(%.3f seconds)' % time_analysis)
