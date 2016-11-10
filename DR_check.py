@@ -30,7 +30,7 @@ def main():
 
     for i in range(len(vehicle_list)):
         for j in range(len(rproposals)):
-            if calcIoU(vehicle_list[i],rproposals[j]) > 0.3:
+            if calcIoU(vehicle_list[i],rproposals[j]) > 0.3:  #IoU threshold
                 vehicle_detect[i] = True
                 rproposals_detect[j] = True
 
