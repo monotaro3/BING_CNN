@@ -138,12 +138,12 @@ def calcIoU(a, b):  # (xmin,ymin,xmax,ymax)
         return IoU
 
 def main():
-    imgpath = "C:/work/vehicle_detection/images/test/ny_mall2.tif"  # 単一ファイル処理
+    imgpath = "../vehicle_detection/images/test/ny_mall2.tif"  # 単一ファイル処理
     showImage = True  # 処理後画像表示　ディレクトリ内処理の場合はオフ
     procDIR = True  # ディレクトリ内ファイル一括処理
-    test_dir = "C:/work/vehicle_detection/images/test/"
-    result_dir = "C:/work/vehicle_detection/images/test/"
-    cnn_dir = "C:/work/PycharmProjects/gradient_slide_cnn/model"#"C:/work/PycharmProjects/gradient_slide_cnn/model/"
+    test_dir = "../vehicle_detection/images/test/"
+    result_dir = "../vehicle_detection/images/test/"
+    cnn_dir = "../sHDNN/model"#"C:/work/PycharmProjects/gradient_slide_cnn/model/"
     cnn_classifier = "gradient_cnn.npz"
     cnn_optimizer = "gradient_optimizer.npz"
     gpuEnable = 1 #1:有効化
@@ -166,7 +166,7 @@ def main():
     result_dir = os.path.join(result_dir,"result_BING_CNN_"+f_startdate)
     logfile_path = os.path.join(result_dir, logfile_name)
     if not os.path.isdir(result_dir):
-        os.mkdir(result_dir)
+        os.makedirs(result_dir)
 
     img_files = []
     img_files_ignored = []
